@@ -5,19 +5,17 @@ const fs = require('fs');
 const path = require('path');
 
 const prefixes = ['+25565', '+25574', '+25568', '+25575'];
-const numOfNumbers = 500; // Total number of numbers to generate
+const numOfNumbers = 10000; // Total number of numbers to generate
 
 function generatePhoneNumber(prefix) {
-    // Calculate the number of digits needed after the prefix
-    const digitsNeeded = 12 - prefix.length;
+    const digitsNeeded = 7; // Number of digits needed after the prefix
     let phoneNumber;
 
     do {
-        // Generate random digits without zeros
+        // Generate a 7-digit number without zeros
         phoneNumber = '';
         for (let i = 0; i < digitsNeeded; i++) {
-            // Generate a digit between 1 and 9
-            phoneNumber += Math.floor(Math.random() * 9) + 1;
+            phoneNumber += Math.floor(Math.random() * 9) + 1; // Digits 1 to 9
         }
     } while (phoneNumber.includes('0')); // Ensure no zeros are present
 
