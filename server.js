@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const prefixes = ['+25565', '+25574', '+25568', '+25575'];
-const numOfNumbers = 10000; // Total number of numbers to generate
+const numOfNumbers = 50; // Total number of numbers to generate
 
 function generatePhoneNumber(prefix) {
     const digitsNeeded = 7; // Number of digits needed after the prefix
