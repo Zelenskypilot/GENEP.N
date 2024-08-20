@@ -8,7 +8,11 @@ const prefixes = ['+25565', '+25574', '+25568', '+25575'];
 const numOfNumbers = 10000; // Total number of numbers to generate
 
 function generatePhoneNumber(prefix) {
-    const randomNumber = Math.floor(Math.random() * 1000000000).toString().padStart(10, '0');
+    // Ensure the generated 10-digit number does not start with zero
+    let randomNumber;
+    do {
+        randomNumber = Math.floor(Math.random() * 1000000000).toString().padStart(10, '0');
+    } while (randomNumber.slice(2, 8) === '000000');
     return `${prefix}${randomNumber}`;
 }
 
